@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function ViewProject({project, onAddTask, onRemoveTask}) {
   const [task, setTask] = useState("");
 
-
   function handleAddTask(event) {
     event.preventDefault();
 
@@ -77,9 +76,9 @@ export default function ViewProject({project, onAddTask, onRemoveTask}) {
             </p>
           ) : (
             <ul className="divide-y divide-stone-200">
-              {project.Task.map((savedTask) => (
+              {project.Task.map((savedTask, index) => (
                 <li
-                  key={savedTask}
+                  key={index}
                   className="grid grid-cols-[1fr_auto] items-center gap-4 px-5 py-4"
                 >
                   <span className="min-w-0 break-words text-sm text-stone-700">
